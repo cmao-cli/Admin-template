@@ -1,0 +1,15 @@
+.with_search {
+  margin-bottom: 16px;
+  padding: 24px 0px 0px 24px;
+  background: #ffffff;
+  :global {
+    .ant-form-item {
+      display: flex;
+      margin-bottom: 24px;
+      margin-right: 0;
+    }
+    .ant-form-item-control-wrapper {
+      flex: 1
+    }
+  }
+}

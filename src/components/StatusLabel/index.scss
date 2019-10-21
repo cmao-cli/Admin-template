@@ -1,0 +1,17 @@
+.label_wrap {
+  padding: 2px 12px;
+  border-radius:16px;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  > i {
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    margin-right: 7px;
+  }
+  > span {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}

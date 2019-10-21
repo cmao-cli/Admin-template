@@ -1,0 +1,25 @@
+{
+  "env": "local",
+  "buildtime": {
+    "debug": true,
+    "language": "zh-CN",
+    "analyze": true,
+    "origin_server": {
+      "ip": "0.0.0.0",
+      "port": "5000",
+      "https": {
+        "enabled": false,
+        "crt": "",
+        "key": ""
+      }
+    }
+  },
+  "runtime": {
+    "api": {
+      "host": "https://test-api-admin-transaction.codemao.cn"
+    },
+    "account": {
+      "host": "https://test-internal-account-api.codemao.cn"
+    }
+  }
+}

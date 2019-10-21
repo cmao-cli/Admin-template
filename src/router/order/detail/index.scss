@@ -1,0 +1,30 @@
+.detail_content {
+  background: #fff;
+  :global {
+    .ant-tabs-bar {
+      margin: 0;
+      padding-left: 16px;
+    }
+    .ant-tabs-tabpane {
+      background: #eeeeee;
+    }
+  }
+}
+
+.pane_wrap {
+  margin: 0px 16px 0 16px;
+  .item_wrap {
+    background: #fff;
+    h1 {
+      padding: 12px 34px;
+      font-size: 16px;
+      border-bottom: 1px solid #E9E9E9;
+      margin-top: 16px;
+      color: #000000;
+      font-weight: 500;
+    }
+    .content {
+      padding: 24px 34px;
+    }
+  }
+}

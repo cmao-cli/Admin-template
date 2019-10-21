@@ -1,0 +1,28 @@
+{
+  "env": "production",
+  "buildtime": {
+    "cdn_path": "https://static-platform.codemao.cn/transaction_admin/",
+    "origin_server": {
+      "ip": "0.0.0.0",
+      "port": "5000",
+      "https": {
+        "enabled": false,
+        "crt": "",
+        "key": ""
+      }
+    },
+    "debug": false,
+    "hot": false,
+    "sourcemap": false,
+    "uglify": true,
+    "analyze": false
+  },
+  "runtime": {
+    "api": {
+      "api1": "https://api.codemao.cn"
+    },
+    "host": {
+      "host1": "https://api.codemao.cn"
+    }
+  }
+}
