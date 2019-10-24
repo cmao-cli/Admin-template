@@ -28,7 +28,6 @@
       {
         "legacy": true,
       }
-    ],
-    ["react-hot-loader/babel"]
+    ]
   ]
 }
