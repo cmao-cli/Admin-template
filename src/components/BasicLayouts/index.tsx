@@ -10,6 +10,7 @@ import PageNotFound from 'src/components/PageNotFound';
 const { Content } = Layout;
 
 const BasicLayouts:React.FC = (props) => {
+  
   const [ collapsed, setCollapse ] = useState(false);
 
   return (

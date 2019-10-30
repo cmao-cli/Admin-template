@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import CommonTable from 'src/components/CommonTable';
-import { getOrderLogs } from 'src/services/api';
+import { getOrderLogs } from 'src/api/admin';
 import { ELogType } from 'src/router/order/type';
 import useFetchHook from 'src/hooks/useFetchHook';
 import { EOrderSorts } from 'src/router/order/type';

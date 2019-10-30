@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useEffect, Fragment, useState } from 'react';
-import { getOrderDetail } from 'src/services/api';
+import { getOrderDetail } from 'src/api/admin';
 import useFetchHook from 'src/hooks/useFetchHook';
 import CustomerInfo from '../customer_info';
 import OrderInfo, { IOrderInfo } from '../order_info';

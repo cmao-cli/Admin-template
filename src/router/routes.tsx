@@ -8,7 +8,7 @@ export interface MenuDataItem {
   children?:MenuDataItem[];
   icon?:string;
 }
-const MyLoadingComponent = ({ isLoading, error }) => {
+const MyLoadingComponent = ({ isLoading, error }:any) => {
   if (isLoading) {
     return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%'}}><Spin/></div>;
   } else if (error) {
