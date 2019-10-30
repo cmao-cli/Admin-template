@@ -10,7 +10,7 @@ declare global {
   }
 }
 
-require('./commons/style.scss');
+require('src/commons/css/style.scss');
 const root_element = document.getElementById('root');
 
 ReactDOM.render(

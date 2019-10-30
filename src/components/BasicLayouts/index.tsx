@@ -17,7 +17,6 @@ const BasicLayouts:React.FC = (props) => {
     <Layout style={{minHeight: '100vh'}}>
       <SiderMenu
         collapsed={collapsed}
-        onCollapse={(collapse) => { setCollapse(!collapse); }}
         menuData={menuData}
       ></SiderMenu>
       <Layout>

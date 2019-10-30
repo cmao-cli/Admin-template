@@ -49,8 +49,4 @@ export let routerData = [
     component: _loadable(() => import('./order/order_list/index')),
     exact: true,
   },
-  {
-    path: '/order/list/detail',
-    component: _loadable(() => import('./order/detail/index')),
-  },
 ];

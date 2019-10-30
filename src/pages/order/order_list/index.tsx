@@ -18,7 +18,7 @@ const OrderList:React.FunctionComponent<IOrderListProps> = () => {
     limit,
     orderSorts: EOrderSorts.PLACED_AT_DESC,
   };
-  const handleSearch = (values) => {
+  const handleSearch = (values:any) => {
     setForm(values);
     setPage({ current: 1, limit });
   };
