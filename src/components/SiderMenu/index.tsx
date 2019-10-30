@@ -3,7 +3,6 @@ import { Drawer, Icon, Menu, Layout } from 'antd';
 import { Link, withRouter } from 'react-router-dom';
 import { getFlatMenuKeys } from 'src/utils/base';
 import { MenuDataItem } from 'src/router/routes';
-// import pathToRegexp from 'path-to-regexp';
 import { Location } from 'history';
 import styles from './index.scss';
 
