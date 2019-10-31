@@ -11,7 +11,6 @@
   "dependencies": {
     "@mlz/axios": "^0.2.9",
     "antd": "^3.24.2",
-    "mlz-axios": "^0.2.8",
     "react": "^16.8.6",
     "react-css-modules": "^4.7.11",
     "react-dom": "^16.8.6",
@@ -33,6 +32,7 @@
     "@types/react-router-dom": "^5.1.1",
     "babel-plugin-import": "^1.12.2",
     "classnames": "^2.2.6",
+    "express": "^4.17.1",
     "ts-loader": "^6.0.4",
     "tslint": "^5.18.0",
     "typescript": "^3.5.3"
