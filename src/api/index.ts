@@ -10,7 +10,7 @@
  */
 const _config = window.CODEMAOCONFIG; //项目不同环境的配置文件
 
-import Http from "mlz-axios";
+import Http from "@mlz/axios";
 import { errorParse } from "./error-code-parse";
 
 const token = localStorage.getItem('authorization') || '';
