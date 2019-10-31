@@ -1,6 +1,6 @@
 import * as React from 'react';
 import CommonTable from 'src/components/CommonTable';
-import { EOrderStatus, OrderTypes, EPlatform } from 'src/pages/order/type';
+import { EOrderStatus, OrderTypes } from 'src/pages/order/type';
 import StatusLabel from 'src/components/StatusLabel';
 import { orderStateColorMap } from 'src/pages/order/constant';
 interface IOrderTableProps {
@@ -40,12 +40,6 @@ const columns = [
     width: 150,
   },
   {
-    title:'应付金额',
-    dataIndex:'total',
-    type:'price',
-    width: 150,
-  },
-  {
     title:'订单状态',
     dataIndex:'state',
     render: (status:EOrderStatus, record:IObject) => <StatusLabel statusNameMap={EOrderStatus} statusColorMap={orderStateColorMap} status={status} />,
@@ -58,22 +52,10 @@ const columns = [
     width: 120,
   },
   {
-    title:'订单来源',
-    dataIndex:'platform',
-    type: 'enums',
-    enums: EPlatform,
-    width: 100,
-  },
-  {
     title:'下单时间',
     dataIndex:'placedAt',
     type: 'date',
     width: 100,
-  },
-  {
-    title:'课时券单价',
-    dataIndex:'ticketUnitPrices',
-    type: 'price',
   },
 ];
 

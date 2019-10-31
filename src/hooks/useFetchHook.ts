@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { AxiosPromise } from 'axios';
 import { message } from 'antd';
 import { omitBy } from 'src/utils/base';
 
@@ -9,7 +8,7 @@ import { omitBy } from 'src/utils/base';
  * @param initialData state的初始值
  * @param deps useEffect deps
  */
-const useFetchHook = (fetchPromiseFunc:(params?:any) => AxiosPromise<any>, params?:any, initialData?:any, deps?:ReadonlyArray<any>) => {
+const useFetchHook = (fetchPromiseFunc:(params?:any) => Promise<any>, params?:any, initialData?:any, deps?:ReadonlyArray<any>) => {
   const [ data, setData ] = useState(initialData);
   const [ loading, setLoading ] = useState(false);
 

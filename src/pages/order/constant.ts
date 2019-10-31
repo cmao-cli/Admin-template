@@ -61,25 +61,6 @@ export const PaymentOptions:OptionProps[] = [
   },
 ];
 
-export const ReviewState:OptionProps[] = [
-  {
-    title: '待系统审核',
-    value: 'AWAITING_REVIEW',
-  },
-  {
-    title: '待人工审核',
-    value: 'SYSTEM_REVIEW_FAILED',
-  },
-  {
-    title: '人工审核不通过',
-    value: 'MANUAL_REVIEW_FAILED',
-  },
-  {
-    title: '审核通过',
-    value: 'REVIEW_PASSED',
-  },
-];
-
 export const orderStateColorMap = {
   'AWAITING_REVIEW': EColor.blue,
   'AWAITING_PAYMENT': EColor.blue,
