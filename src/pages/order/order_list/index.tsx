@@ -4,7 +4,7 @@ import { getOrders } from 'src/api/admin';
 import SearchBar from './components/search_bar';
 import OrderTable from './components/order_tabel';
 import useFetchHook from 'src/hooks/useFetchHook';
-import { EOrderSorts } from 'src/router/order/type';
+import { EOrderSorts } from 'src/pages/order/type';
 
 interface IOrderListProps {}
 

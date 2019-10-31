@@ -1,10 +1,10 @@
 import * as React from 'react';
 import CommonTable from 'src/components/CommonTable';
-import { EOrderStatus, OrderTypes, EPlatform } from 'src/router/order/type';
+import { EOrderStatus, OrderTypes, EPlatform } from 'src/pages/order/type';
 import StatusLabel from 'src/components/StatusLabel';
-import { orderStateColorMap } from 'src/router/order/constant';
+import { orderStateColorMap } from 'src/pages/order/constant';
 interface IOrderTableProps {
-  onPageChange:(pageObj) => void;
+  onPageChange:(pageObj:IObject) => void;
   loading:boolean;
   data:any[];
   total:number;
@@ -48,7 +48,7 @@ const columns = [
   {
     title:'订单状态',
     dataIndex:'state',
-    render: (status, record) => <StatusLabel statusNameMap={EOrderStatus} statusColorMap={orderStateColorMap} status={status} />,
+    render: (status:EOrderStatus, record:IObject) => <StatusLabel statusNameMap={EOrderStatus} statusColorMap={orderStateColorMap} status={status} />,
   },
   {
     title:'订单类型',

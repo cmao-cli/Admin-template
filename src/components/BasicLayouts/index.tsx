@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import { Layout, Icon } from 'antd';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { routerData, menuData } from 'src/router/routes';
+import { routerData, menuData } from 'src/pages/routes';
 import SiderMenu from 'src/components/SiderMenu';
 import GlobalHeader from 'src/components/GlobalHeader';
 import PageNotFound from 'src/components/PageNotFound';

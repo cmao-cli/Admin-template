@@ -1,6 +1,6 @@
 import * as React from 'react';
 import WithSearch, { FormItem } from 'src/components/WithSearch';
-import { OrderStatus, OrderTypes, PaymentOptions } from 'src/router/order/constant';
+import { OrderStatus, OrderTypes, PaymentOptions } from 'src/pages/order/constant';
 export interface ISearchBarProps {
   onSearch:(formValues:any) => void;
 }

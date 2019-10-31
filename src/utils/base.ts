@@ -1,4 +1,4 @@
-import { MenuDataItem } from 'src/router/routes';
+import { MenuDataItem } from 'src/pages/routes';
 import * as moment from 'moment';
 /**
  * recursively flatten the data
@@ -15,7 +15,7 @@ export const getFlatMenuKeys = (menuData:MenuDataItem[]) : string[] => {
   return keys;
 };
 
-export const getByteForUTF = (s) => {
+export const getByteForUTF = (s:string) => {
   const a = s.replace(/[\u0000-\u007f]/g, '\u0061');
   const b = a.replace(/[\u0080-\u07ff]/g, '\u0061\u0061');
   const c = b.replace(/[\u0800-\uffff]/g, '\u0061\u0061\u0061');
@@ -45,18 +45,20 @@ export const formatUnix = (time:number) => moment(time * 1000).format('YYYY/MM/D
 /**
  * 根据predicate函数删除对象某些项
  */
-export const omitBy = (object, predicate) => {
+export const omitBy =<T extends IObject, K extends keyof T>(object:T, predicate:(value:T[K]) => boolean) : Partial<T> => { 
   if (typeof object !== 'object') {
     return object;
   }
-  const newObject = {};
+  const newObject:Partial<T> = {};
+  
   Object.keys(object).forEach((item) => {
-    if (!predicate(object[item])) {
+    if (predicate(object[item])) {
       newObject[item] = object[item];
     }
   });
   return newObject;
 };
+
 
 /**
  * 毫秒级转为秒级
@@ -67,10 +69,11 @@ export const milliToSecond = (millisecond:number) => {
 
 export const getCookie = (cname:string) : string => {
   const cookieArr = window.document.cookie.split('; ');
-  const cookieObj = cookieArr.reduce((prev, current) => {
+  const cookieObj:IObject = cookieArr.reduce((prev:IObject, current) => {
     const [ key, value ] = current.split('=');
     prev[key] = value;
     return prev;
+    
   }, {});
   return cookieObj[cname] || '';
 };
@@ -89,7 +92,7 @@ export const getEnumLabel = (value:string, enums:{label:string, value:string}[])
 export const parseQuery = (queryString:string, queryKey:string) : string => {
   const query = queryString[0] === '?' ? queryString.substr(1) : queryString;
   let pairs = query.split('&');
-  const queryMap = pairs.reduce((prev, current) => {
+  const queryMap:IObject = pairs.reduce((prev:IObject, current) => {
     const [ key, value ] = current.split('=');
     prev[key] = value;
     return prev;
