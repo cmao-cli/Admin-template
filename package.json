@@ -4,7 +4,7 @@
   "description": "后台系统",
   "scripts": {
     "production": "node ./bin/product_server.js",
-    "serve": "mlz-pack serve"
+    "start": "mlz-pack serve"
   },
   "author": "luoqian",
   "license": "ISC",
