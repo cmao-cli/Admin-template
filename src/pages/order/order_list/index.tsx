@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
-import { getOrders } from 'src/services/api';
+import { useState } from 'react';
+import { getOrders } from 'src/api/admin';
 import SearchBar from './components/search_bar';
 import OrderTable from './components/order_tabel';
 import useFetchHook from 'src/hooks/useFetchHook';
@@ -18,7 +18,7 @@ const OrderList:React.FunctionComponent<IOrderListProps> = () => {
     limit,
     orderSorts: EOrderSorts.PLACED_AT_DESC,
   };
-  const handleSearch = (values) => {
+  const handleSearch = (values:any) => {
     setForm(values);
     setPage({ current: 1, limit });
   };

@@ -48,7 +48,7 @@ function WithSearch(props:IWithSearchProps) {
           />
         );
       default:
-        break;
+        return <Input placeholder={placeholder || '请输入'} />;
     }
   };
   const renderFormItem = () : React.ReactNode => {

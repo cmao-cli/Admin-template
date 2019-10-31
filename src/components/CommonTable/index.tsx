@@ -12,7 +12,7 @@ export interface CommonColumn<T> extends ColumnProps<T> {
   enums?:any;
   path?:string;
 }
-export interface ICommonTableProps<T> extends TableProps<T> {
+export interface ICommonTableProps<T> extends Partial<TableProps<T>> {
   data:any[];
   columns:CommonColumn<T>[];
   noPage?:boolean; //是否需要分页逻辑
@@ -28,7 +28,7 @@ const CommonTable = (props:ICommonTableProps<any>) => {
   const handlePageChange = (page:number, limit:number) => {
     console.log('handlePageChange');
     console.log({current: page, limit});
-    props.onPageChange({current: page, limit});
+    props.onPageChange && props.onPageChange({current: page, limit});
   };
   const { data, total, pageSize, current, loading = false, columns, noPage, rowKey = 'id', ...others } = props;
   const transformedColumns = transformColumns(columns);

@@ -1,22 +1,20 @@
 import * as React from 'react';
-import { Drawer, Icon, Menu, Layout } from 'antd';
-import { Link, withRouter } from 'react-router-dom';
+import { Icon, Menu, Layout } from 'antd';
+import { Link, withRouter, RouteComponentProps } from 'react-router-dom';
 import { getFlatMenuKeys } from 'src/utils/base';
 import { MenuDataItem } from 'src/router/routes';
-// import pathToRegexp from 'path-to-regexp';
 import { Location } from 'history';
 import styles from './index.scss';
 
 const { Sider } = Layout;
-export interface SiderMenuProps {
+export interface SiderMenuProps extends RouteComponentProps<any> {
   collapsed:boolean;
-  onCollapse:(collapse:boolean) => void;
   menuData:MenuDataItem[];
   location:Location;
 }
 
 const SiderMenu:React.FC<SiderMenuProps> = (props) => {
-  const { collapsed, onCollapse, menuData, location = { pathname: '/'} } = props;
+  const { collapsed, menuData, location = { pathname: '/'} } = props;
   const getMenuItems = (menu:MenuDataItem[] = []) : React.ReactNode[] => {
     return menu.map((item) => {
       if (item.children && item.children.length) {

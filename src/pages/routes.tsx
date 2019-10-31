@@ -8,7 +8,7 @@ export interface MenuDataItem {
   children?:MenuDataItem[];
   icon?:string;
 }
-const MyLoadingComponent = ({ isLoading, error }) => {
+const MyLoadingComponent = ({ isLoading, error }:any) => {
   if (isLoading) {
     return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%'}}><Spin/></div>;
   } else if (error) {
@@ -48,9 +48,5 @@ export let routerData = [
     path: '/order/list',
     component: _loadable(() => import('./order/order_list/index')),
     exact: true,
-  },
-  {
-    path: '/order/list/detail',
-    component: _loadable(() => import('./order/detail/index')),
   },
 ];
