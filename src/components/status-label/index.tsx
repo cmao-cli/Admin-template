@@ -25,7 +25,7 @@ interface IStatusColorMap {
 }
 
 interface IStatusLabel {
-  statusNameMap:Object; //状态名称map表
+  statusNameMap:IObject; //状态名称map表
   statusColorMap:IStatusColorMap; //状态颜色map表
   status:string;
 }

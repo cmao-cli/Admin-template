@@ -75,7 +75,7 @@ function WithSearch(props:IWithSearchProps) {
   };
   const handleSearch = () => {
     const fields = props.form.getFieldsValue();
-    const trimedFields = Object.keys(fields).reduce((prev, current) => {
+    const trimedFields = Object.keys(fields).reduce((prev:IObject, current) => {
       // 只有string类型参数时才可以trim，如果是数字或对象则不允许
       prev[current] = (fields[current] && (typeof(fields[current]) === 'string')) ? fields[current].trim() : fields[current];
       return prev;

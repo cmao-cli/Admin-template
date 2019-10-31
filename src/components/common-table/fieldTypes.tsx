@@ -18,9 +18,9 @@ interface FieldTypes {
 const fieldTypes:FieldTypes = {
   normal: (value) => value,
   price: (value) => formatPrice(value),
-  link: (value, { path }) => <Link to={`${path}id=${value}`}>{value}</Link>,
+  link: (value, { path }:IObject) => <Link to={`${path}id=${value}`}>{value}</Link>,
   date: (value) => formatUnix(value),
-  enums: (value, { enums }) => enums[value],
+  enums: (value, { enums }:IObject) => enums[value],
   phone: (value) => <Tooltip trigger="click" title={value}><span style={{ cursor: 'pointer' }}>{formatPhone(value)}</span></Tooltip>,
   omit: (value) => <Tooltip title={value}><span>{exceedAddOmit(value, 8)}</span></Tooltip>,
   array: (value) => value.join(','),
@@ -28,15 +28,15 @@ const fieldTypes:FieldTypes = {
 
 export type FieldKeys = 'price' | 'link' | 'normal' | 'date' | 'enums' | 'phone' | 'omit' | 'array';
 
-const getFieldValue = (value, column) => {
+const getFieldValue = (value:any, column:any) => {
   let { type = 'normal' } = column;
-  return fieldTypes[type](value, column);
+  return fieldTypes[type](value, column);``
 };
 const transformColumns = (columns:any[]) => {
   return columns.map((column) => {
     let { render, ...others } = column;
     if (!render) {
-      render = (value) => {
+      render = (value:any) => {
         return getFieldValue(value, column);
       };
     }

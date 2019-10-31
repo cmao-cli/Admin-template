@@ -11,7 +11,7 @@ interface BreadcrumbProps {
   style?:React.CSSProperties;
 }
 
-const breadcrumbNameMap = {};
+const breadcrumbNameMap:IObject = {};
 // routesData
 routerData.forEach((item) => {
   breadcrumbNameMap[item.path] = item.name;

@@ -4,7 +4,7 @@ import { Layout, Icon } from 'antd';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { routerData, menuData } from 'src/pages/routes';
 import SiderMenu from 'src/components/sider-menu';
-import GlobalHeader from 'src/components/global-header';
+import { GlobalHeader } from 'src/components/global-header';
 import PageNotFound from 'src/components/page-not-found';
 
 const { Content } = Layout;

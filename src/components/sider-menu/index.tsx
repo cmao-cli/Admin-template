@@ -42,7 +42,6 @@ const SiderMenu:React.FC<SiderMenuProps> = (props) => {
    * 获取当前路由下，应该选中的keys数组
    * @param pathname
    */
-  // TODO: 如何优雅的判断是否匹配上
   const getSelectedKeys = (pathname:string) : string[] => {
     const flattenedKeys = getFlatMenuKeys(menuData);
     return flattenedKeys.filter((key) => key && pathname.includes(key));

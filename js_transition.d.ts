@@ -1,5 +1,5 @@
 // External libs
-import * as History from 'history';
+// import * as History from 'history';
 // These will have to remain until we (or someone else) writes
 // proper .d.ts definition files for them.
 declare var template:any;
@@ -13,10 +13,6 @@ declare module '*.scss' {
   export default content;
 }
 
-interface Window {
-  browserHistory:History.History<any>;
-  CODEMAOCONFIG:any;
-}
 declare interface IObject {
   [index:string]: any
 }

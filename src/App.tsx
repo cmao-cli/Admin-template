@@ -10,11 +10,19 @@ const store = create_store();
 
 export const browserHistory = History.createBrowserHistory();
 window.browserHistory = browserHistory;
+declare global {
+  interface Window {
+    browserHistory:History.History<any>;
+    CODEMAOCONFIG:any;
+  }
+}
+
 
 const App = () => (
   <ConfigProvider locale={locale}>
     <Provider store={store}>
       <Router history={browserHistory}>
+        <Route path="/login" ></Route>
         <Route path="/" component={BasicLayouts}></Route>
       </Router>
     </Provider>

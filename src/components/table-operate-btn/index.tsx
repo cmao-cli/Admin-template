@@ -22,9 +22,9 @@ export default function Operate (props:IOperateProps) {
       return;
     }
     if (needConfirm) {
-      confirm(confirmConfig);
+      confirm(confirmConfig!);
     } else {
-      onClick();
+      onClick && onClick();
     }
   };
   return (

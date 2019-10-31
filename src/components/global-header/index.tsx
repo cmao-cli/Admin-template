@@ -3,7 +3,7 @@ import { Layout } from 'antd';
 const { Header } = Layout;
 import styles from './index.scss';
 
-export default (props) => {
+export const GlobalHeader:React.FunctionComponent = (props) => {
   return (
     <div className={styles.gheader}>
       <Header style={{background: '#fff'}}>
