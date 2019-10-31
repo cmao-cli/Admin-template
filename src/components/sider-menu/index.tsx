@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Icon, Menu, Layout } from 'antd';
 import { Link, withRouter, RouteComponentProps } from 'react-router-dom';
 import { getFlatMenuKeys } from 'src/utils/base';
-import { MenuDataItem } from 'src/router/routes';
+import { MenuDataItem } from 'src/pages/routes';
 import { Location } from 'history';
 import styles from './index.scss';
 

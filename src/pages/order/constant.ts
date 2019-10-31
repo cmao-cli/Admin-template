@@ -1,5 +1,5 @@
 import { OptionProps } from 'antd/lib/select/index';
-import { EColor } from 'src/components/StatusLabel';
+import { EColor } from 'src/components/status-label';
 
 // 订单状态
 export const OrderStatus:OptionProps[] = [

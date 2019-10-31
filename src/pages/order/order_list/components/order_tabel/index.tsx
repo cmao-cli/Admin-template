@@ -1,7 +1,7 @@
 import * as React from 'react';
-import CommonTable from 'src/components/CommonTable';
+import CommonTable from 'src/components/common-table';
 import { EOrderStatus, OrderTypes } from 'src/pages/order/type';
-import StatusLabel from 'src/components/StatusLabel';
+import StatusLabel from 'src/components/status-Label';
 import { orderStateColorMap } from 'src/pages/order/constant';
 interface IOrderTableProps {
   onPageChange:(pageObj:IObject) => void;
