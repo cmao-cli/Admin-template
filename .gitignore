@@ -38,3 +38,4 @@ build/
 src/test.tsx
 pack.sh
 stats.json
+example
