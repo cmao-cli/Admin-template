@@ -1,8 +1,8 @@
 import * as React from 'react';
-import CommonTable from 'src/components/common-table';
+import { CommonTable } from 'src/components/common-table';
 import { OrderTypes } from 'src/pages/order/type';
 interface IOrderTableProps {
-  onPageChange:(pageObj:IObject) => void;
+  onPageChange:(pageObj:any) => void;
   loading:boolean;
   data:any[];
   total:number;
@@ -23,7 +23,6 @@ const columns = [
   {
     title:'客户手机号',
     dataIndex:'customerPhoneNumber',
-    type: 'phone',
   },
   {
     title:'客户姓名',
@@ -52,7 +51,7 @@ const columns = [
   },
 ];
 
-const OrderTable:React.FunctionComponent<IOrderTableProps> = (props) => {
+export const OrderTable:React.FunctionComponent<IOrderTableProps> = (props) => {
   const { loading, data, total, current, pageSize, onPageChange } = props;
   return (
     <CommonTable
@@ -67,5 +66,3 @@ const OrderTable:React.FunctionComponent<IOrderTableProps> = (props) => {
     />
   );
 };
-
-export default OrderTable;

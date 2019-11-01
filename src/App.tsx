@@ -2,23 +2,23 @@ import * as React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route } from 'react-router-dom';
 import * as History from 'history';
-import { create_store } from './redux/root_store';
-import BasicLayouts from 'src/components/basic-layouts';
+import { _createStore } from './redux/root-store';
+import { BasicLayouts } from 'src/components/basic-layouts';
 import { ConfigProvider } from 'antd';
 import locale from 'antd/es/locale-provider/zh_CN';
-const store = create_store();
+const store = _createStore();
 
 export const browserHistory = History.createBrowserHistory();
 window.browserHistory = browserHistory;
 declare global {
+  /* tslint:disable-next-line */
   interface Window {
     browserHistory:History.History<any>;
     CODEMAOCONFIG:any;
   }
 }
 
-
-const App = () => (
+export const App = () => (
   <ConfigProvider locale={locale}>
     <Provider store={store}>
       <Router history={browserHistory}>
@@ -28,4 +28,3 @@ const App = () => (
     </Provider>
   </ConfigProvider>
 );
-export default App;

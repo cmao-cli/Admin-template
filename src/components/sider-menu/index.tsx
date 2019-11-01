@@ -2,20 +2,20 @@ import * as React from 'react';
 import { Icon, Menu, Layout } from 'antd';
 import { Link, withRouter, RouteComponentProps } from 'react-router-dom';
 import { getFlatMenuKeys } from 'src/utils/base';
-import { MenuDataItem } from 'src/pages/routes';
+import { IMenuDataItem } from 'src/pages/routes';
 import { Location } from 'history';
 import styles from './index.scss';
 
 const { Sider } = Layout;
-export interface SiderMenuProps extends RouteComponentProps<any> {
+export interface ISiderMenuProps extends RouteComponentProps<any> {
   collapsed:boolean;
-  menuData:MenuDataItem[];
+  menuData:IMenuDataItem[];
   location:Location;
 }
 
-const SiderMenu:React.FC<SiderMenuProps> = (props) => {
-  const { collapsed, menuData, location = { pathname: '/'} } = props;
-  const getMenuItems = (menu:MenuDataItem[] = []) : React.ReactNode[] => {
+const SiderMenu:React.FC<ISiderMenuProps> = (props) => {
+  const { collapsed, menuData, location = { pathname: '/' }} = props;
+  const getMenuItems = (menu:IMenuDataItem[] = []) : React.ReactNode[] => {
     return menu.map((item) => {
       if (item.children && item.children.length) {
         return (
@@ -54,7 +54,7 @@ const SiderMenu:React.FC<SiderMenuProps> = (props) => {
         collapsible
         collapsed={collapsed}
         trigger={null}
-        style={{ minHeight: '100vh'}}
+        style={{ minHeight: '100vh' }}
       >
         <div className={styles.sider_menu_logo}>
           <a href="/">后台管理系统</a>
@@ -71,4 +71,4 @@ const SiderMenu:React.FC<SiderMenuProps> = (props) => {
   );
 };
 
-export default withRouter(SiderMenu);
+export const SiderMenuWithRouter = withRouter(SiderMenu);

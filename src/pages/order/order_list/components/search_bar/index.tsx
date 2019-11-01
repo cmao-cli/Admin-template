@@ -1,12 +1,12 @@
 import * as React from 'react';
-import WithSearch, { FormItem } from 'src/components/with-search';
+import { WithSearchForm, IFormItem } from 'src/components/with-search';
 import { OrderStatus, OrderTypes, PaymentOptions } from 'src/pages/order/constant';
 export interface ISearchBarProps {
   onSearch:(formValues:any) => void;
 }
 
-export default function SearchBar (props:ISearchBarProps) {
-  const searchItems:FormItem[] = [
+export function SearchBar (props:ISearchBarProps) {
+  const searchItems:IFormItem[] = [
     {
       key:'orderId',
       label:'订单编号',
@@ -37,7 +37,7 @@ export default function SearchBar (props:ISearchBarProps) {
 
   return (
     <div>
-      <WithSearch
+      <WithSearchForm
         formItem={searchItems}
         onSearch={props.onSearch}
       />

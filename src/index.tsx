@@ -1,12 +1,13 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import 'moment/locale/zh-cn';
-import App from './App';
+import { App }  from './App';
 
+/* tslint:disable-next-line */
 require('src/commons/css/style.scss');
-const root_element = document.getElementById('root');
+const rootElement = document.getElementById('root');
 
 ReactDOM.render(
   <App/>,
-  root_element,
+  rootElement,
 );

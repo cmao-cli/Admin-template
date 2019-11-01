@@ -1,7 +1,7 @@
-export interface MenuDataItem {
+export interface IMenuDataItem {
   name?:string;
   path?:string;
   component?:any;
-  children?:MenuDataItem[];
+  children?:IMenuDataItem[];
   icon?:string;
 }

@@ -6,7 +6,7 @@ import styles from './index.scss';
 export const GlobalHeader:React.FunctionComponent = (props) => {
   return (
     <div className={styles.gheader}>
-      <Header style={{background: '#fff'}}>
+      <Header style={{ background: '#fff' }}>
         {props.children}
       </Header>
     </div>

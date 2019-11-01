@@ -9,14 +9,14 @@ export interface IOperateProps {
   disabled?:boolean;
   name:string;
   onClick?:(params?:any) => void;
-  needConfirm?:boolean; //是否需要确认弹窗
-  confirmConfig?:ModalFuncProps; //确认弹窗的配置
+  needConfirm?:boolean; // 是否需要确认弹窗
+  confirmConfig?:ModalFuncProps; // 确认弹窗的配置
   color?:string;
 }
 
-export default function Operate (props:IOperateProps) {
+export function Operate (props:IOperateProps) {
   const { disabled, name, onClick, needConfirm, confirmConfig } = props;
-  const colorStyle = disabled ? { color: 'rgba(0,0,0,0.25)'} : {};
+  const colorStyle = disabled ? { color: 'rgba(0,0,0,0.25)' } : {};
   const handleClick = () => {
     if (disabled) {
       return;

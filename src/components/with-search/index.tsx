@@ -7,24 +7,24 @@ import styles from './index.scss';
 import * as moment from 'moment';
 const { Option } = Select;
 
-export type FormItem = {
+export interface IFormItem {
   label:string;
   type?:string;
   key:string;
-  enums?:OptionProps[]; //select选择框的option数组
+  enums?:OptionProps[]; // select选择框的option数组
   placeholder?:string;
   initialValue?:string;
-};
+}
 
 export interface IWithSearchProps extends FormComponentProps {
-  formItem:FormItem[];
-  onSearch?:(formValues:{ [field:string]:any }) => void; //搜索的请求函数
+  formItem:IFormItem[];
+  onSearch?:(formValues:{ [field:string]:any }) => void; // 搜索的请求函数
   onReset?:() => void;
 }
 
 function WithSearch(props:IWithSearchProps) {
   const { getFieldDecorator } = props.form;
-  const getComponent = (item:FormItem) : React.ReactNode => {
+  const getComponent = (item:IFormItem) : React.ReactNode => {
     const { type = 'input', enums = [], placeholder } = item;
     switch (type) {
       case 'input':
@@ -101,5 +101,4 @@ function WithSearch(props:IWithSearchProps) {
   );
 }
 
-const WithSearchForm = Form.create<IWithSearchProps>()(WithSearch);
-export default WithSearchForm;
+export const WithSearchForm = Form.create<IWithSearchProps>()(WithSearch);

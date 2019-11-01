@@ -3,22 +3,22 @@ import { useState } from 'react';
 import { Layout, Icon } from 'antd';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { routerData, menuData } from 'src/pages/routes';
-import SiderMenu from 'src/components/sider-menu';
+import { SiderMenuWithRouter } from 'src/components/sider-menu';
 import { GlobalHeader } from 'src/components/global-header';
-import PageNotFound from 'src/components/page-not-found';
+import { PageNotFound } from 'src/components/page-not-found';
 
 const { Content } = Layout;
 
-const BasicLayouts:React.FC = (props) => {
-  
-  const [ collapsed, setCollapse ] = useState(false);
+export const BasicLayouts:React.FC = (props) => {
+
+  const [collapsed, setCollapse] = useState(false);
 
   return (
-    <Layout style={{minHeight: '100vh'}}>
-      <SiderMenu
+    <Layout style={{ minHeight: '100vh' }}>
+      <SiderMenuWithRouter
         collapsed={collapsed}
         menuData={menuData}
-      ></SiderMenu>
+      ></SiderMenuWithRouter>
       <Layout>
         <GlobalHeader>
           <Icon
@@ -47,5 +47,3 @@ const BasicLayouts:React.FC = (props) => {
     </Layout>
   );
 };
-
-export default BasicLayouts;
