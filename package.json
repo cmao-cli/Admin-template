@@ -6,6 +6,11 @@
     "production": "node ./bin/product_server.js",
     "start": "mlz-pack serve"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $GIT_PARAMS"
+    }
+  },
   "author": "luoqian",
   "license": "ISC",
   "dependencies": {
@@ -22,6 +27,8 @@
   },
   "devDependencies": {
     "@cmao/mlz-config": "^1.0.0",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "@mlz/lint": "^1.0.7",
     "@mlz/pack": "0.0.11",
     "@types/node": "^12.6.2",
@@ -34,6 +41,7 @@
     "babel-plugin-import": "^1.12.2",
     "classnames": "^2.2.6",
     "express": "^4.17.1",
+    "husky": "^3.0.9",
     "ts-loader": "^6.0.4",
     "tslint": "^5.18.0",
     "typescript": "^3.5.3"
