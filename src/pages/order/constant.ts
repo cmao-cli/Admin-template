@@ -1,5 +1,4 @@
 import { OptionProps } from 'antd/lib/select/index';
-import { EColor } from 'src/components/status-label';
 
 // 订单状态
 export const OrderStatus:OptionProps[] = [
@@ -60,14 +59,3 @@ export const PaymentOptions:OptionProps[] = [
     value: 'DEPOSIT',
   },
 ];
-
-export const orderStateColorMap = {
-  'AWAITING_REVIEW': EColor.blue,
-  'AWAITING_PAYMENT': EColor.blue,
-  'AWAITING_CHECK': EColor.yellow,
-  'AWAITING_SHIPPING': EColor.yellow,
-  'AWAITING_CONFIRMATION': EColor.yellow,
-  'COMPLETED': EColor.green,
-  'CANCELLED': EColor.red,
-  'CLOSED': EColor.red,
-};
