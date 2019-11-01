@@ -8,10 +8,10 @@
  * }
  * 详细用法请见：https://github.com/juicecube/mlz-axios
  */
-const _config = window.CODEMAOCONFIG; //项目不同环境的配置文件
+const _config = window.CODEMAOCONFIG; // 项目不同环境的配置文件
 
-import Http from "@mlz/axios";
-import { errorParse } from "./error-code-parse";
+import Http from '@mlz/axios';
+import { errorParse } from './error-code-parse';
 
 const token = localStorage.getItem('authorization') || '';
 const AUTHORIZATION_TYPE_THREE = 3;
@@ -29,6 +29,5 @@ Http.setResInterceptor(
     }
   },
 );
-
 
 export const Api = new Http(_config.api.host);

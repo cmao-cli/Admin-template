@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "后台系统",
   "scripts": {
-    "production": "node ./bin/product_server.js",
-    "start": "mlz-pack serve"
+    "production": "node ./bin/server.js",
+    "start": "mlz-pack serve",
+    "build": "mlz-pack build"
   },
   "husky": {
     "hooks": {
@@ -20,6 +21,7 @@
       ]
     },
     "ignore": [
+      "bin/server.js",
       "src/lib/**/*",
       "*.test.(j|t)s"
     ]
