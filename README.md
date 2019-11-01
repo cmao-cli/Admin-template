@@ -1,14 +1,13 @@
-# 前置
-复制./config/local.json.example到./config/local.json，并根据需求进行修改。
 # 运行
-npm run serve
+npm run start
 # 打包
 npm run build
+
 #### 特性
 1. antd按需加载
 
 #### 路由
-`src/router/routes.tsx`配置所有的路由数组和左侧菜单数组
+`src/pages/routes.tsx`配置所有的路由数组和左侧菜单数组
 
 #### 封装的antd公共组件
 1. Breadcrumb
