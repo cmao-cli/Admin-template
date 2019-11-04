@@ -6,7 +6,7 @@ import { routerData } from 'src/pages/routes';
 
 import styles from './index.scss';
 
-interface BreadcrumbProps {
+interface IBreadcrumbProps {
   location:Location;
   style?:React.CSSProperties;
 }
@@ -17,8 +17,8 @@ routerData.forEach((item) => {
   breadcrumbNameMap[item.path] = item.name;
 });
 
-const MyBreadcrumb:React.FC<BreadcrumbProps> = (props) => {
-  const { location: { pathname }, style = {} } = props;
+const MyBreadcrumb:React.FC<IBreadcrumbProps> = (props) => {
+  const { location: { pathname }, style = {}} = props;
   const pathSnippets = pathname.split('/').filter((i) => i);
   const extraBreadcrumbItems = pathSnippets.map((_, index) => {
     const url = `/${pathSnippets.slice(0, index + 1).join('/')}`;

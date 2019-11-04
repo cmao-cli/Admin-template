@@ -9,8 +9,8 @@ import { omitBy } from 'src/utils/base';
  * @param deps useEffect deps
  */
 const useFetchHook = (fetchPromiseFunc:(params?:any) => Promise<any>, params?:any, initialData?:any, deps?:ReadonlyArray<any>) => {
-  const [ data, setData ] = useState(initialData);
-  const [ loading, setLoading ] = useState(false);
+  const [data, setData] = useState(initialData);
+  const [loading, setLoading] = useState(false);
 
   // 处理对象参数：当value为空时，omit该参数
   const formatedParams = omitBy(params, (item) => !item );
@@ -31,7 +31,7 @@ const useFetchHook = (fetchPromiseFunc:(params?:any) => Promise<any>, params?:an
     };
     fetchData();
   }, deps ? deps : []);
-  return [ data, loading ];
+  return [data, loading];
 };
 
 export default useFetchHook;

@@ -5,7 +5,7 @@
 // export const getOrders = (params:any) => Api.get('/orders', { params });
 
 // fakeRequest
-export const getOrders = (params:any) => new Promise((resolve, reject) => {
+export const getOrders = async (params:any) => new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve(
       {
