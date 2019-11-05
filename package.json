@@ -30,6 +30,7 @@
   "license": "ISC",
   "dependencies": {
     "@mlz/axios": "^0.2.9",
+    "@mlz/super-utils": "^1.0.5",
     "antd": "^3.24.2",
     "rdx-model": "0.0.2",
     "react": "^16.8.6",
