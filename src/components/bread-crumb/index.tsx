@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Location } from 'history';
 import { Breadcrumb } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { routerData } from 'src/pages/routes';
 
 import styles from './index.scss';
@@ -38,4 +38,4 @@ const MyBreadcrumb:React.FC<IBreadcrumbProps> = (props) => {
   );
 };
 
-export default MyBreadcrumb;
+export default withRouter(MyBreadcrumb);
