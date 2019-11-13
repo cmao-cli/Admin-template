@@ -1,4 +1,5 @@
 import { createModel, Raw, Action } from 'rdx-model';
+import { createPromiseAction } from 'src/utils/create-promise-middleware';
 // example
 // states
 export interface IDemoState {
@@ -29,5 +30,8 @@ export const demo = createModel({
     },
   },
 });
+
+export const promiseType = 'demo/promise';
+export const promiseAction = createPromiseAction<string>(promiseType);
 
 export const { addNum, minusNum } = demo.actions;

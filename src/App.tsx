@@ -6,6 +6,7 @@ import { _createStore } from './redux/root-store';
 import { BasicLayouts } from 'src/components/basic-layouts';
 import { ConfigProvider } from 'antd';
 import locale from 'antd/es/locale-provider/zh_CN';
+import { promiseAction } from 'src/redux/demo';
 const store = _createStore();
 
 export const browserHistory = History.createBrowserHistory();
@@ -28,3 +29,9 @@ export const App = () => (
     </Provider>
   </ConfigProvider>
 );
+
+(store.dispatch(promiseAction('123')) as any).then((res:any) => {
+  console.log(res);
+}).catch((err:any) => {
+  console.log(err);
+});

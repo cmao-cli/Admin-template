@@ -5,7 +5,6 @@ export function* RootSaga() {
   const sagas = [
     DemoSaga,
   ];
-
   yield all(sagas.map((saga) =>
     spawn(function* () {
       while (true) {
