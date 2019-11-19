@@ -83,3 +83,29 @@ npm run build
 
 #### HOOKS
 1. 请求数据的hooks: useFetchHook
+
+#### 设计（样式）规范
+1. 相关文件
+- `src/commons/css/themes.scss` : 主题文件（存放相关主题样式）
+- `src/commons/css/themify.scss` : 主题 mixin（负责生成主题样式map和相关类名，无需关心）
+
+2. 应用
+- html文件的根元素类名为 `.theme_${主题名}`, 如要更换主题，只需更换其类名为相应主题即可
+- 具体某个元素要适配主题，写法如下：
+```js
+.button {
+  height: 40px;
+  width: 60px;
+  // 固定写法（注意：主题样式必须包含在themify中）
+  @include themify($themes) {
+    // 样式： themed(主题中的样式名)
+    background-color: themed(red_1);
+  }
+
+  &:hover {
+    @include themify($themes) {
+      background-color: themed(red_2);
+    }
+  }
+}
+```

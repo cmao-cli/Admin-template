@@ -6,5 +6,8 @@
     "no-unused-expression": false,
     "no-console": false,
     "no-default-export": false
+  },
+  "linterOptions": {
+    "exclude": ["./mlz-pack.js"]
   }
 }
