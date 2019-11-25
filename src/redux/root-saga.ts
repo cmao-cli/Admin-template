@@ -1,7 +1,7 @@
 import { call, spawn, all } from 'redux-saga/effects';
 import { DemoSaga } from 'src/redux/demo/saga';
 
-export function* RootSaga() {
+export function* rootSaga() {
   const sagas = [
     DemoSaga,
   ];
