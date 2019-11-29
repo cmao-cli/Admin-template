@@ -9,7 +9,22 @@ module.exports = {
     htmlPlugin: {
       filename: 'index.html',
       front_config: `<script>window.CODEMAOCONFIG = ${JSON.stringify(config.runtime)}</script>`,
-      template: path.resolve(__dirname, './src/index.ejs'),
-    }
+    },
+    loaderOptions: [
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: [
+                path.resolve(__dirname, './src/commons/css/themes.scss'),
+                path.resolve(__dirname, './src/commons/css/themify.scss'),
+              ],
+            },
+          },
+        ],
+      },
+    ],
   }
 }

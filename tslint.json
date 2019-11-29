@@ -8,9 +8,6 @@
     "no-default-export": false
   },
   "linterOptions": {
-    "exclude": [
-      "./mlz-pack.js",
-      "js_transition.d.ts"
-    ]
+    "exclude": ["./mlz-pack.js"]
   }
 }
