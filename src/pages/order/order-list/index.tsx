@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { getOrders } from 'src/api/admin';
-import { SearchBar } from './components/search_bar';
-import { OrderTable } from './components/order_tabel';
+import { SearchBar } from './components/search-bar';
+import { OrderTable } from './components/order-tabel';
 import useFetchHook from 'src/hooks/useFetchHook';
 
 const OrderList:React.FunctionComponent = () => {

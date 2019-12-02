@@ -1,30 +1,24 @@
 import * as React from 'react';
-import * as Loadable from 'react-loadable';
+// import * as Loadable from 'react-loadable';
+import { Suspense, lazy } from 'react';
 import { Spin } from 'antd';
-
+import { ErrorBoundary } from 'src/components/error-boundary';
 export interface IMenuDataItem {
   path:string;
   name:string;
   children?:IMenuDataItem[];
   icon?:string;
 }
-const MyLoadingComponent = ({ isLoading, error }:any) => {
-  if (isLoading) {
-    return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}><Spin/></div>;
-  } else if (error) {
-    // 如果页面本身出现问题，可以将error信息打印在控制台中查看
-    console.error(error);
-    return <div>Sorry, there was a problem loading the page.</div>;
-  } else {
-    return null;
-  }
-};
-export const _loadable = (loadFunc:any) => {
-  return Loadable({
-    loader: loadFunc,
-    loading: MyLoadingComponent,
-    delay: 200,
-  });
+
+export const _lazy = (loadFunc:() => Promise<any>) => {
+  const Component = lazy(loadFunc);
+  return () => (
+      <ErrorBoundary>
+        <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}><Spin/></div>}>
+          <Component />
+        </Suspense>
+      </ErrorBoundary>
+    );
 };
 
 // 左侧菜单数据
@@ -46,7 +40,7 @@ export let menuData:IMenuDataItem[] = [
 export let routerData = [
   {
     path: '/order/list',
-    component: _loadable(() => import('./order/order_list/index')),
+    component: _lazy(() => import('./order/order-list/index')),
     exact: true,
     name: '订单列表',
   },

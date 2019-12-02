@@ -6,8 +6,10 @@ const config = require('./config/index');
 const path = require('path');
 module.exports = {
   webpack: {
+    analyzePlugin: true,
     htmlPlugin: {
       filename: 'index.html',
+      template: './src/index.ejs',
       front_config: `<script>window.CODEMAOCONFIG = ${JSON.stringify(config.runtime)}</script>`,
     },
     loaderOptions: [
