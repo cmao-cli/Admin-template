@@ -2,11 +2,10 @@ import * as React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route } from 'react-router-dom';
 import * as History from 'history';
-import { _createStore } from './redux/root-store';
+import { store } from './redux/root-store';
 import { BasicLayouts } from 'src/components/basic-layouts';
 import { ConfigProvider } from 'antd';
 import locale from 'antd/es/locale-provider/zh_CN';
-const store = _createStore();
 
 export const browserHistory = History.createBrowserHistory();
 window.browserHistory = browserHistory;
