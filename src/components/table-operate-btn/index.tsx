@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Modal } from 'antd';
 import { ModalFuncProps } from 'antd/lib/modal/index';
-import styles from './index.scss';
+import './index.scss';
 
 const { confirm } = Modal;
 
@@ -29,7 +29,7 @@ export function Operate (props:IOperateProps) {
   };
   return (
     <span
-      className={styles.operate_btn}
+      styleName={'operate_btn'}
       style={colorStyle}
       onClick={handleClick}
     >

@@ -4,7 +4,7 @@ import { Link, withRouter, RouteComponentProps } from 'react-router-dom';
 import { getFlatMenuKeys } from 'src/utils/base';
 import { IMenuDataItem } from 'src/pages/routes';
 import { Location } from 'history';
-import styles from './index.scss';
+import './index.scss';
 
 const { Sider } = Layout;
 export interface ISiderMenuProps extends RouteComponentProps<any> {
@@ -56,7 +56,7 @@ const SiderMenu:React.FC<ISiderMenuProps> = (props) => {
         trigger={null}
         style={{ minHeight: '100vh' }}
       >
-        <div className={styles.sider_menu_logo}>
+        <div styleName={'sider_menu_logo'}>
           <a href="/">后台管理系统</a>
         </div>
         <Menu

@@ -4,7 +4,7 @@ import { Breadcrumb } from 'antd';
 import { Link, withRouter } from 'react-router-dom';
 import { routerData } from 'src/pages/routes';
 
-import styles from './index.scss';
+import './index.scss';
 
 interface IBreadcrumbProps {
   location:Location;
@@ -30,7 +30,7 @@ const MyBreadcrumb:React.FC<IBreadcrumbProps> = (props) => {
     );
   });
   return (
-    <div className={styles.bc_wrapper} style={style}>
+    <div styleName={'bc_wrapper'} style={style}>
       <Breadcrumb >
         {extraBreadcrumbItems}
       </Breadcrumb>

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Layout } from 'antd';
 const { Header } = Layout;
-import styles from './index.scss';
+import './index.scss';
 
 export const GlobalHeader:React.FunctionComponent = (props) => {
   return (
-    <div className={styles.gheader}>
+    <div styleName={'gheader'}>
       <Header style={{ background: '#fff' }}>
         {props.children}
       </Header>

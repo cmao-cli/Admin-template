@@ -3,7 +3,7 @@ import { Select, Form, Row, Col, Button, Input, DatePicker } from 'antd';
 import { OptionProps } from 'antd/lib/select/index';
 import { FormComponentProps } from 'antd/lib/form/index';
 import locale from 'antd/lib/date-picker/locale/zh_CN';
-import styles from './index.scss';
+import './index.scss';
 import * as moment from 'moment';
 const { Option } = Select;
 
@@ -89,7 +89,7 @@ function WithSearch(props:IWithSearchProps) {
     props.onSearch && props.onSearch({});
   };
   return (
-    <Row className={styles.with_search}>
+    <Row styleName={'with_search'}>
       <Col span={20}>
         {renderFormItem()}
       </Col>
