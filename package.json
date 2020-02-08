@@ -16,8 +16,11 @@
   "lint-staged": {
     "linters": {
       "*.{js,ts,tsx}": [
-        "tslint",
+        "eslint",
         "git add"
+      ],
+      "*.{css,scss}": [
+        "stylelint"
       ]
     },
     "ignore": [
@@ -45,7 +48,7 @@
     "@cmao/mlz-config": "^1.0.1",
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
-    "@mlz/lint": "^1.0.10",
+    "@mlz/lint": "^1.1.10",
     "@mlz/pack": "0.0.11",
     "@types/node": "^12.6.2",
     "@types/react-css-modules": "^4.6.2",
@@ -57,11 +60,12 @@
     "babel-plugin-import": "^1.12.2",
     "classnames": "^2.2.6",
     "env-status": "^0.30.0",
+    "eslint": "^6.8.0",
     "express": "^4.17.1",
     "husky": "^3.0.9",
     "lint-staged": "^8.0.4",
     "sass-resources-loader": "^2.0.1",
-    "tslint": "^5.18.0",
+    "stylelint": "^13.0.0",
     "typescript": "^3.5.3"
   }
 }
