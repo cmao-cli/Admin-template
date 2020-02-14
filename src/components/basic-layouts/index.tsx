@@ -18,18 +18,21 @@ export const BasicLayouts:React.FC = (props) => {
       <SiderMenuWithRouter
         collapsed={collapsed}
         menuData={menuData}
-      ></SiderMenuWithRouter>
+      />
       <Layout>
         <GlobalHeader>
           <Icon
-              className="trigger"
-              type={collapsed ? 'menu-unfold' : 'menu-fold'}
-              onClick={() => { setCollapse(!collapsed); }}
-            />
+            className="trigger"
+            type={collapsed ? 'menu-unfold' : 'menu-fold'}
+            onClick={() => { setCollapse(!collapsed); }}
+          />
         </GlobalHeader>
         <Content>
           <Switch>
-            <Redirect exact from="/" to={{ pathname: routerData[0].path }} />
+            <Redirect
+              exact
+              from="/"
+              to={{ pathname: routerData[0].path }} />
             {
               routerData.map((item) => (
                 <Route
@@ -37,10 +40,12 @@ export const BasicLayouts:React.FC = (props) => {
                   key={item.path}
                   path={item.path}
                   component={item.component}
-                ></Route>
+                />
               ))
             }
-            <Route path="/" component={PageNotFound} />
+            <Route
+              path="/"
+              component={PageNotFound} />
           </Switch>
         </Content>
       </Layout>

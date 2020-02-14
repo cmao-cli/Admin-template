@@ -18,19 +18,23 @@ routerData.forEach((item) => {
 });
 
 const MyBreadcrumb:React.FC<IBreadcrumbProps> = (props) => {
-  const { location: { pathname }, style = {}} = props;
+  const { location: { pathname }, style = {} } = props;
   const pathSnippets = pathname.split('/').filter((i) => i);
   const extraBreadcrumbItems = pathSnippets.map((_, index) => {
     const url = `/${pathSnippets.slice(0, index + 1).join('/')}`;
     const activeColor = url === pathname ? { color: '#000000' } : {};
     return breadcrumbNameMap[url] && (
       <Breadcrumb.Item key={url}>
-        <Link style={activeColor} to={url}>{breadcrumbNameMap[url]}</Link>
+        <Link
+          style={activeColor}
+          to={url}>{breadcrumbNameMap[url]}</Link>
       </Breadcrumb.Item>
     );
   });
   return (
-    <div styleName={'bc_wrapper'} style={style}>
+    <div
+      styleName={'bc_wrapper'}
+      style={style}>
       <Breadcrumb >
         {extraBreadcrumbItems}
       </Breadcrumb>
@@ -38,4 +42,4 @@ const MyBreadcrumb:React.FC<IBreadcrumbProps> = (props) => {
   );
 };
 
-export default withRouter(MyBreadcrumb);
+export const AdminBreadcrumb = withRouter(MyBreadcrumb);
