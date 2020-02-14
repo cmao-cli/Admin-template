@@ -28,6 +28,7 @@ module.exports = {
           },
         ],
       },
+      // 由于antd-pro-layout里用到了less，所以需要添加less-loader处理
       {
         test: /\.less$/,
         use: [
