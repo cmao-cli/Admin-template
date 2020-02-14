@@ -1,9 +1,7 @@
-import {  createStore, applyMiddleware, Middleware, Store } from 'redux';
-import { rootReducer, IReduxState } from './root-reducer';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 import { rootSaga } from './root-saga';
-
-export type StoreType = Store<IReduxState>;
+import { rootReducer } from './root-reducer';
 
 // 创建 saga middleware
 const sagaMiddleware = createSagaMiddleware({
@@ -12,21 +10,14 @@ const sagaMiddleware = createSagaMiddleware({
     console.log('error is', error);
   },
 });
+const middleware = [...getDefaultMiddleware({ serializableCheck: false }), sagaMiddleware];
+export const store = configureStore({
+  reducer: rootReducer,
+  middleware,
+  devTools: process.env.NODE_ENV !== 'production',
+});
 
-export let _createStore =  () : Store<IReduxState> => {
-  const middlewares:Middleware[] = [sagaMiddleware].filter(Boolean);
-
-  // 注入 saga middleware
-  const createStoreWithMidddleware = applyMiddleware(
-    ...middlewares,
-  )(createStore);
-
-  const stateStore:any = createStoreWithMidddleware(
-    rootReducer,
-    (window as any).__REDUX_DEVTOOLS_EXTENSION__
-      && (window as any).__REDUX_DEVTOOLS_EXTENSION__(),
-  );
-  return stateStore;
-};
-export const store = _createStore();
 sagaMiddleware.run(rootSaga);
+
+export type AppDispatch = typeof store.dispatch;
+export const dispatch = store.dispatch;

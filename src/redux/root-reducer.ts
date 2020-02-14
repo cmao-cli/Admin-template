@@ -1,9 +1,8 @@
-import { combineReducers } from 'redux';
-import { IDemoState, demo } from 'src/redux/demo';
-export interface IReduxState {
-  demo:IDemoState;
-}
+import { combineReducers } from '@reduxjs/toolkit';
+import { demo } from 'src/redux/demo';
 
-export const rootReducer = combineReducers<IReduxState>({
-  demo:demo.reducer,
+export const rootReducer = combineReducers({
+  demo: demo.reducer,
 });
+
+export type RootState = ReturnType<typeof rootReducer>;

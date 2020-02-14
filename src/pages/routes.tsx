@@ -24,6 +24,12 @@ export const routerData = [
     exact: true,
     name: '订单列表',
   },
+  {
+    path: '/demo',
+    component: _lazy(() => import('./demo/index')),
+    exact: true,
+    name: 'redux-demo',
+  },
 ];
 
 export const menuData:Route = {
@@ -36,6 +42,10 @@ export const menuData:Route = {
         {
           name: '订单总览',
           path: '/order/list',
+        },
+        {
+          name: 'redux-demo',
+          path: '/demo',
         },
       ],
     },

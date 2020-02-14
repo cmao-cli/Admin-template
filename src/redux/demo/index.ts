@@ -1,33 +1,19 @@
-import { createModel, Raw, Action } from 'rdx-model';
-// example
-// states
-export interface IDemoState {
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+interface IDemoState {
   num:number;
 }
-// initial states
-export const defaultState:IDemoState = {
-  num: 0,
-};
-// Action && Reducer
-export const demo = createModel({
-  state: defaultState,
+export const demo = createSlice({
+  name: 'demo',
+  initialState: {
+    num: 0,
+  } as IDemoState,
   reducers: {
-    'demo/add': {
-      name: Raw('addNum'),
-      reducer: (state, action:Action<number>) : IDemoState => {
-        const temp = state.num + action.payload!;
-        // console.log(temp);
-        return { ...state, num: temp };
-      },
-    },
-    'demo/minus': {
-      name: Raw('minusNum'),
-      reducer: (state, action:Action<number>) : IDemoState => {
-        const temp = state.num - action.payload!;
-        return { ...state, num: temp };
-      },
+    putDemo(state, action:PayloadAction<Partial<IDemoState>>){
+      return { ...state, ...action.payload };
     },
   },
+
 });
 
-export const { addNum, minusNum } = demo.actions;
+export const { putDemo } = demo.actions;

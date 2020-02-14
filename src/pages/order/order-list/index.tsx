@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { getOrders } from 'src/api/admin';
+import useFetchHook from 'src/hooks/useFetchHook';
 import { SearchBar } from './components/search-bar';
 import { OrderTable } from './components/order-tabel';
-import useFetchHook from 'src/hooks/useFetchHook';
 
 const OrderList:React.FunctionComponent = () => {
   const [formValues, setForm] = useState({});

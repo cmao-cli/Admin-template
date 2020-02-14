@@ -12,5 +12,6 @@ module.exports = {
     'react/jsx-closing-tag-location': 0,
     'react/prop-types': 0,
     'react/no-multi-comp': 0,
+    "import/no-default-export": 0,
   },
 };

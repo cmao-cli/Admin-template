@@ -35,14 +35,13 @@
     "@ant-design/pro-layout": "^4.10.13",
     "@mlz/axios": "^0.2.9",
     "@mlz/super-utils": "^1.0.5",
+    "@reduxjs/toolkit": "^1.2.5",
     "antd": "^3.24.2",
-    "rdx-model": "0.0.2",
     "react": "^16.8.6",
     "react-css-modules": "^4.7.11",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
-    "redux": "^4.0.4",
     "redux-saga": "^1.1.1"
   },
   "devDependencies": {
