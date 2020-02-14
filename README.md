@@ -9,6 +9,8 @@ npm run build
 - [@mlz/axios](https://github.com/juicecube/mlz-axios)请求封装库
 - [@mlz/config](https://phab.srv.codemao.cn/source/codemaster-mlz-config)通用的后端接口配置
 - [@mlz/lint](https://github.com/juicecube/mlz-lint)(tsConfig和tslint的通用配置)
+- [@redux/toolkit](https://github.com/reduxjs/redux-toolkit/)(更简便的redux用法)
+- [@ant-design/pro-layout](https://prolayout.ant.design/)(更加方便快速的使用layout，配置化更强)
 
 #### 项目结构
 ```
@@ -38,9 +40,7 @@ npm run build
 │   │   ├── basic-layouts
 │   │   ├── bread-crumb
 │   │   ├── common-table
-│   │   ├── global-header
 │   │   ├── page-not-found
-│   │   ├── sider-menu
 │   │   ├── table-operate-btn
 │   │   └── with-search
 │   ├── hooks
