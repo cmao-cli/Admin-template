@@ -2,10 +2,11 @@ import * as React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route } from 'react-router-dom';
 import * as History from 'history';
-import { store } from './redux/root-store';
-import { BasicLayouts } from 'src/components/basic-layouts';
+// import { BasicLayouts } from 'src/components/basic-layouts';
+import BasicLayout from '@ant-design/pro-layout';
 import { ConfigProvider } from 'antd';
 import locale from 'antd/es/locale-provider/zh_CN';
+import { store } from './redux/root-store';
 
 export const browserHistory = History.createBrowserHistory();
 window.browserHistory = browserHistory;
@@ -21,8 +22,10 @@ export const App = () => (
   <ConfigProvider locale={locale}>
     <Provider store={store}>
       <Router history={browserHistory}>
-        <Route path="/login" ></Route>
-        <Route path="/" component={BasicLayouts}></Route>
+        <Route path="/login" />
+        <Route
+          path="/"
+          component={BasicLayout} />
       </Router>
     </Provider>
   </ConfigProvider>
