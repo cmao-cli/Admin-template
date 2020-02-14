@@ -2,8 +2,7 @@ import * as React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route } from 'react-router-dom';
 import * as History from 'history';
-// import { BasicLayouts } from 'src/components/basic-layouts';
-import BasicLayout from '@ant-design/pro-layout';
+import { BasicLayouts } from 'src/components/basic-layouts';
 import { ConfigProvider } from 'antd';
 import locale from 'antd/es/locale-provider/zh_CN';
 import { store } from './redux/root-store';
@@ -25,7 +24,7 @@ export const App = () => (
         <Route path="/login" />
         <Route
           path="/"
-          component={BasicLayout} />
+          component={BasicLayouts} />
       </Router>
     </Provider>
   </ConfigProvider>
