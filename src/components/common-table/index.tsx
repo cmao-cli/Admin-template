@@ -8,9 +8,9 @@ import { ColumnProps, TableProps } from 'antd/lib/table/interface';
 import { transformColumns } from './field-types';
 
 export interface ICommonColumn<T> extends ColumnProps<T> {
-  type?:string;  // type代替render函数，减少重复render的编写
-  enums?:any;
-  path?:string;
+  type?:string; // type代替render函数，减少重复render的编写
+  enums?:any; // type定义为枚举时，传入枚举定义
+  path?:string; // type定义link跳转时，传入跳转路径
 }
 export interface ICommonTableProps<T> extends Partial<TableProps<T>> {
   data:any[];
@@ -21,7 +21,7 @@ export interface ICommonTableProps<T> extends Partial<TableProps<T>> {
   current?:number;
   loading?:boolean;
   rowKey?:string;
-  onPageChange?:(page:{current:number, limit:number}) => void;
+  onPageChange?:(page:{current:number; limit:number}) => void;
 }
 
 export const CommonTable = (props:ICommonTableProps<any>) => {
@@ -31,6 +31,8 @@ export const CommonTable = (props:ICommonTableProps<any>) => {
     props.onPageChange && props.onPageChange({ current: page, limit });
   };
   const { data, total, pageSize, current, loading = false, columns, noPage, rowKey = 'id', ...others } = props;
+
+  // transformColumns转换column中定义的type到render函数，具体的type定义见field-types.tsx
   const transformedColumns = transformColumns(columns);
   const paginationConfig:PaginationProps | boolean = noPage ? false : {
     current,
