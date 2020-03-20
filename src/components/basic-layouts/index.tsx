@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, Link } from 'react-router-dom';
 import { routerData, menuData } from 'src/pages/routes';
 import { PageNotFound } from 'src/components/page-not-found';
 import ProLayout from '@ant-design/pro-layout';
@@ -9,6 +9,7 @@ export const BasicLayouts:React.FC = (props) => (
   <ProLayout
     route={menuData}
     {...layoutConfig}
+    menuItemRender={(item) => <Link to={(item.path as string)}>{item.name}</Link>}
   >
     <Switch>
       <Redirect
