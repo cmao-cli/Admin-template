@@ -4,12 +4,12 @@
   "description": "后台系统",
   "scripts": {
     "production": "node ./bin/server.js",
-    "start": "mlz-pack serve",
-    "build": "mlz-pack build"
+    "start": "yuumi serve",
+    "build": "NODE_ENV=$front_env env-build-validate && yuumi build && env-status --gen"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && env-status-version-validate",
+      "pre-commit": "lint-staged",
       "commit-msg": "commitlint -e $GIT_PARAMS"
     }
   },
@@ -59,7 +59,7 @@
     "@types/react-router-dom": "^5.1.1",
     "babel-plugin-import": "^1.12.2",
     "classnames": "^2.2.6",
-    "env-status": "^0.30.0",
+    "env-status": "^1.2.4",
     "eslint": "^6.8.0",
     "express": "^4.17.1",
     "husky": "^3.0.9",
