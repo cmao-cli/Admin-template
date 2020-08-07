@@ -4,7 +4,6 @@ var app = express()
 let _config = require('../config/index.js');
 const fs = require('fs');
 
-const IP = _config.buildtime.origin_server.ip;
 const PORT = '5000';
 
 (function injectConfig() {
