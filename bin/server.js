@@ -5,7 +5,7 @@ let _config = require('../config/index.js');
 const fs = require('fs');
 
 const IP = _config.buildtime.origin_server.ip;
-const PORT = _config.buildtime.origin_server.port;
+const PORT = '5000';
 
 (function injectConfig() {
   const configScript = `<!--configArea--><script>window.CODEMAOCONFIG = ${JSON.stringify(_config.runtime)}</script><!--endOfConfigArea-->`;
