@@ -6,7 +6,7 @@ const path = require('path');
 const config = require('./config/index');
 module.exports = {
   webpack: {
-    analyzePlugin: true,
+    analyzePlugin: false,
     htmlPlugin: {
       filename: 'index.html',
       favicon: 'favicon.ico',
