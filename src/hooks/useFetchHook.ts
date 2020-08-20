@@ -15,7 +15,7 @@ const useFetchHook = (fetchPromiseFunc:(params?:any) => Promise<any>, params?:an
   // 处理对象参数：当value为空时，omit该参数
   const formatedParams = omitBy(params, (item) => !item );
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async() => {
       try {
         setLoading && setLoading(true);
         const result = await fetchPromiseFunc(formatedParams);

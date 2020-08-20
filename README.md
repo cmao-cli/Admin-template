@@ -11,6 +11,8 @@ npm run build
 - [@mlz/lint](https://github.com/juicecube/mlz-lint)(tsConfig和tslint的通用配置)
 - [@redux/toolkit](https://github.com/reduxjs/redux-toolkit/)(更简便的redux用法)
 - [@ant-design/pro-layout](https://prolayout.ant.design/)(更加方便快速的使用layout，配置化更强)
+- [@mlz/doraemon](https://github.com/juicecube/doraemon)(常用的lodash里没有的utils方法)
+- [ahooks](https://github.com/alibaba/hooks)(非常方便的hooks)
 
 #### 项目结构
 ```
