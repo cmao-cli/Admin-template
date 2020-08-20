@@ -1,10 +1,12 @@
-import { IMenuDataItem } from 'src/pages/routes';
 import * as moment from 'moment';
+
+import { IMenuDataItem } from 'src/pages/routes';
+
 /**
  * recursively flatten the data
  * @param menus
  */
-export const getFlatMenuKeys = (menuData:IMenuDataItem[]) : string[] => {
+export const getFlatMenuKeys = (menuData:IMenuDataItem[]):string[] => {
   let keys:string[] = [];
   menuData.forEach((item) => {
     keys.push(item.path);
@@ -15,19 +17,11 @@ export const getFlatMenuKeys = (menuData:IMenuDataItem[]) : string[] => {
   return keys;
 };
 
-export const getByteForUTF = (s:string) => {
-  const a = s.replace(/[\u0000-\u007f]/g, '\u0061');
-  const b = a.replace(/[\u0080-\u07ff]/g, '\u0061\u0061');
-  const c = b.replace(/[\u0800-\uffff]/g, '\u0061\u0061\u0061');
-  return c.length;
-};
-
 export const exceedAddOmit = (str:string, max:number) => {
-  const len = 3;
   if (!str) {
     return;
   }
-  return getByteForUTF(str) > max * len ? str.slice(0, max) + '...' : str;
+  return str.length > max ? `${str.slice(0, max) }...` : str;
 };
 
 export const formatPrice = (price:number | number[]) => {
@@ -46,7 +40,8 @@ export const formatUnix = (time:number) => moment(time * 1000).format('YYYY/MM/D
 /**
  * 根据predicate函数删除对象某些项
  */
-export const omitBy = <T extends IObject, K extends keyof T>(object:T, predicate:(value:T[K]) => boolean) : Partial<T> => {
+export const omitBy = <T extends IObject, K extends keyof T>
+  (object:T, predicate:(value:T[K]) => boolean) => {
   if (typeof object !== 'object') {
     return object;
   }
@@ -54,13 +49,13 @@ export const omitBy = <T extends IObject, K extends keyof T>(object:T, predicate
 
   Object.keys(object).forEach((item) => {
     if (predicate(object[item])) {
-      newObject[item] = object[item];
+      newObject[item as K] = object[item];
     }
   });
   return newObject;
 };
 
-export const getCookie = (cname:string) : string => {
+export const getCookie = (cname:string):string => {
   const cookieArr = window.document.cookie.split('; ');
   const cookieObj:IObject = cookieArr.reduce((prev:IObject, current) => {
     const [key, value] = current.split('=');
